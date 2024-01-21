@@ -15,7 +15,9 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Personal keymaps
-vim.keymap.set('n', '<leader>pv', ':Vex<CR>', { desc = 'Open project files' })
+vim.keymap.set('n', '<leader>v', ':Vex<CR>', { desc = 'Open project files in a new buffer' })
+vim.keymap.set('n', '<leader>h', ':Ex<CR>', { desc = 'Open project files in current buffer' })
+
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up' })
 
