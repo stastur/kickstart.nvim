@@ -1,24 +1,16 @@
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
-
--- Set scroll offset
-vim.o.so = 8
+vim.o.scrolloff = 8
 vim.o.colorcolumn = '80'
 
 -- Set highlight on search
 vim.o.hlsearch = false
+vim.o.incsearch = true
 
--- Make line numbers default
-vim.wo.number = true
-vim.wo.relativenumber = true
-
--- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.number = true
+vim.o.relativenumber = true
 
 -- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
+-- Remove this option if you want your OS clipboard to remain independent.
+-- See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
@@ -31,15 +23,16 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+-- keep signcolumn on by default
+vim.o.signcolumn = 'yes'
 
--- Decrease update time
+-- decrease update time
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
--- Set completeopt to have a better completion experience
+-- set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
+-- note: you should make sure your terminal supports this
 vim.o.termguicolors = true
+vim.g.copilot_enabled = 0
