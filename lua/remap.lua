@@ -32,9 +32,3 @@ vim.keymap.set('v', opt_j, ":m '<-2<CR>gv=gv", { desc = 'Move block down' })
 
 vim.keymap.set('n', opt_shift_j, 'Yp', { desc = 'Duplicate line below' })
 vim.keymap.set('n', opt_shift_k, 'YP', { desc = 'Duplicate line above' })
-
-function toggle()
-	require('zen-mode').toggle()
-end
-
-vim.keymap.set('n', "<leader>zz", toggle, { desc = 'Zen mode' })
