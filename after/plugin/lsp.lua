@@ -9,7 +9,9 @@ local on_attach = function(_, bufnr)
 
   nmap('<leader>f', vim.lsp.buf.format, '[F]ormat')
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>ca', function()
+    vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' } } }
+  end, '[C]ode [A]ction')
 
   local builtin = require('telescope.builtin')
   nmap('gd', builtin.lsp_definitions, '[G]oto [D]efinition')
