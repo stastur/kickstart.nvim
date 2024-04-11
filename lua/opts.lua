@@ -36,3 +36,6 @@ vim.o.completeopt = 'menuone,noselect'
 -- note: you should make sure your terminal supports this
 vim.o.termguicolors = true
 vim.g.copilot_enabled = 0
+
+vim.opt.hlsearch = true
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
