@@ -11,11 +11,7 @@ vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diag
 vim.keymap.set('n', '<leader>ev', vim.cmd.Vex, { desc = 'Open project files in a new buffer' })
 vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = 'Open project files in current buffer' })
 
-vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to bottom window' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right window' })
-vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left window' })
-vim.keymap.set('n', '<C-w>', '<C-w>w', { desc = 'Move to next window' })
-vim.keymap.set('n', '<C-q>', '<C-w>q', { desc = 'Close current buff' })
+vim.keymap.set('n', '<C-q>', '<C-w>q', { desc = 'Close current window' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up' })
@@ -32,3 +28,7 @@ vim.keymap.set('v', opt_j, ":m '<-2<CR>gv=gv", { desc = 'Move block down' })
 
 vim.keymap.set('n', opt_shift_j, 'Yp', { desc = 'Duplicate line below' })
 vim.keymap.set('n', opt_shift_k, 'YP', { desc = 'Duplicate line above' })
+
+vim.keymap.set('n', '<leader>qo', ':copen<CR>', { desc = 'Open quickfix list' })
+vim.keymap.set('n', '<C-j>', ':cnext<CR>zz', { desc = 'Next quickfix entry' })
+vim.keymap.set('n', '<C-k>', ":cprev<CR>zz", { desc = 'Prev quickfix entry' })
