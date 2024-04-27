@@ -8,9 +8,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
-vim.keymap.set('n', '<leader>ev', vim.cmd.Vex, { desc = 'Open project files in a new buffer' })
-vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = 'Open project files in current buffer' })
-
 vim.keymap.set('n', '<C-q>', '<C-w>q', { desc = 'Close current window' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down' })
