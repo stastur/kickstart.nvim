@@ -1,23 +1,19 @@
 return {
   'ellisonleao/gruvbox.nvim',
-
-  {
-    'projekt0n/github-nvim-theme',
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require('github-theme').setup()
-      vim.cmd.colorscheme('github_dark')
-    end
-  },
+  'projekt0n/github-nvim-theme',
 
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    opts = {
-      styles = {
-        italic = false
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require('rose-pine').setup {
+        styles = {
+          italic = false
+        }
       }
-    }
+      vim.cmd.colorscheme('rose-pine-moon')
+    end
   }
 }
