@@ -36,26 +36,20 @@ return {
           vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
         end
 
-        nmap('<leader>f', vim.lsp.buf.format, '[F]ormat')
-        nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-        nmap('<leader>ca', function()
-          vim.lsp.buf.code_action { context = { only = { 'quickfix', 'refactor', 'source' } } }
-        end, '[C]ode [A]ction')
-
         local builtin = require('telescope.builtin')
         nmap('gd', builtin.lsp_definitions, '[G]oto [D]efinition')
         nmap('gr', builtin.lsp_references, '[G]oto [R]eferences')
-        nmap('gI', builtin.lsp_implementations, '[G]oto [I]mplementation')
-        nmap('<leader>D', builtin.lsp_type_definitions, 'Type [D]efinition')
-        nmap('<leader>ds', builtin.lsp_document_symbols, '[D]ocument [S]ymbols')
-        nmap('<leader>ws', builtin.lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-        -- See `:help K` for why this keymap
+        nmap('<leader>f', vim.lsp.buf.format, '[F]ormat')
+        nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
         nmap('H', vim.lsp.buf.signature_help, 'Signature Documentation')
 
-        -- Lesser used LSP functionality
-        nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        nmap('[d', vim.diagnostic.goto_prev, 'Go to previous diagnostic message')
+        nmap(']d', vim.diagnostic.goto_next, 'Go to next diagnostic message')
+        nmap('<leader>dm', vim.diagnostic.open_float, 'Open floating diagnostic message')
+        nmap('<leader>dl', vim.diagnostic.setloclist, 'Open diagnostics list')
       end
 
       require('mason').setup()
@@ -108,10 +102,6 @@ return {
           completeopt = 'menu,menuone,noinsert',
         },
         mapping = cmp.mapping.preset.insert {
-          ['<C-n>'] = cmp.mapping.select_next_item(),
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
           ['<C-Space>'] = cmp.mapping.complete {},
           ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Replace,
