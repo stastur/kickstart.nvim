@@ -29,6 +29,10 @@ return {
           },
         },
 
+        pickers = {
+          find_files = { hidden = true },
+        },
+
         ["ui-select"] = {
           require("telescope.themes").get_dropdown {},
         },
